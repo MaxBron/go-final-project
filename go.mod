@@ -3,7 +3,9 @@ module go-final-project
 go 1.22
 
 require (
+	github.com/golang-jwt/jwt/v5 v5.2.1
 	github.com/jmoiron/sqlx v1.4.0
+	github.com/joho/godotenv v1.5.1
 	github.com/stretchr/testify v1.9.0
 	modernc.org/sqlite v1.30.0
 )
