@@ -1,11 +1,13 @@
-module go_final_project
+module go-final-project
 
-go 1.22.2
+go 1.22
 
 require (
+	github.com/golang-jwt/jwt/v5 v5.2.1
 	github.com/jmoiron/sqlx v1.4.0
+	github.com/joho/godotenv v1.5.1
 	github.com/stretchr/testify v1.9.0
-	modernc.org/sqlite v1.29.9
+	modernc.org/sqlite v1.30.0
 )
 
 require (
@@ -20,7 +22,7 @@ require (
 	golang.org/x/sys v0.19.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	modernc.org/gc/v3 v3.0.0-20240107210532-573471604cb6 // indirect
-	modernc.org/libc v1.49.3 // indirect
+	modernc.org/libc v1.50.9 // indirect
 	modernc.org/mathutil v1.6.0 // indirect
 	modernc.org/memory v1.8.0 // indirect
 	modernc.org/strutil v1.2.0 // indirect

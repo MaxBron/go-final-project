@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "7540:7540"
+    volumes:
+      - .:/usr/src/app
+    command: go run /usr/src/app/...

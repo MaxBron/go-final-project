@@ -18,7 +18,6 @@ func addTask(t *testing.T, task task) string {
 		"repeat":  task.repeat,
 	}, http.MethodPost)
 	assert.NoError(t, err)
-
 	assert.NotNil(t, ret["id"])
 	id := fmt.Sprint(ret["id"])
 	assert.NotEmpty(t, id)
@@ -26,26 +25,23 @@ func addTask(t *testing.T, task task) string {
 }
 
 func getTasks(t *testing.T, search string) []map[string]string {
-	url := "/api/tasks"
+	url := "api/tasks"
 	if Search {
 		url += "?search=" + search
 	}
 	body, err := requestJSON(url, nil, http.MethodGet)
-	fmt.Println(err)
 	assert.NoError(t, err)
 
-	m := make(map[string][]map[string]string)
-
+	var m map[string][]map[string]string
 	err = json.Unmarshal(body, &m)
-	fmt.Println(err)
 	assert.NoError(t, err)
-
 	return m["tasks"]
 }
 
 func TestTasks(t *testing.T) {
 	db := openDB(t)
 	defer db.Close()
+
 	now := time.Now()
 	_, err := db.Exec("DELETE FROM scheduler")
 	assert.NoError(t, err)
